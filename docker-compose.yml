@@ -9,8 +9,8 @@ services:
             context: /home/stagiaire7/PycharmProjects/docker_web_server_flask/
         ports:
             -   "5000:5000"
-        #network_mode: "host"
-        #command:["-h=0.0.0.0"]
+        network_mode: "host"
+        command: ["-h=0.0.0.0"]
     jmeter:
         image: sofiannagounine/docker-jmeter
         #image: my_jmeter
@@ -21,7 +21,7 @@ services:
             - ./results:/results
         #command: ["-H", "web", "-P", "5000"]
         #links:
-            #- web
+        #    - web
     jenkins:
         image: jenkins:alpine
         hostname: localhost
@@ -32,3 +32,20 @@ services:
           - "50000:50000"
         volumes:
         - /home/stagiaire7/data:/var/jenkins_home
+
+    gitlab:
+        image: gitlab/gitlab-ce:8.9.6-ce.0
+        restart: always
+        hostname: '0.0.0.0'
+        environment:
+          GITLAB_OMNIBUS_CONFIG: |
+          # external_url 'https://gitlab.example.com'
+          # Add any other gitlab.rb configuration here, each on its own line
+        ports:
+          - "80:80"
+          - "443:443"
+          - "2222:22"
+        volumes:
+        - /opt/gitlab/config:/etc/gitlab
+        - /opt/gitlab/logs:/var/log/gitlab
+        - /opt/gitlab/data:/var/opt/gitlab

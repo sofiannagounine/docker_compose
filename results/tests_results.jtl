@@ -128,4 +128,36 @@
   <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
 </sample>
 
+<httpSample t="77" it="0" lt="0" ct="77" ts="1480519708656" s="false" lb="landing page /" rc="Non HTTP response code: java.net.ConnectException" rm="Non HTTP response message: Connection refused (Connection refused)" tn="Thread Group 1-1" dt="text" by="2130" sby="0" ng="1" na="1">
+  <responseData class="java.lang.String">java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:120)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:179)
+	at org.apache.http.impl.conn.ManagedClientConnectionImpl.open(ManagedClientConnectionImpl.java:328)
+	at org.apache.jmeter.protocol.http.sampler.MeasuringConnectionManager$MeasuredConnection.open(MeasuringConnectionManager.java:114)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:612)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:447)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:884)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:654)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:413)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:74)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1166)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1155)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:475)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:418)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:249)
+	at java.lang.Thread.run(Thread.java:745)
+</responseData>
+</httpSample>
+<sample t="77" it="824" lt="0" ct="77" ts="1480519707872" s="false" lb="transaction controller 1 /" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-1" dt="" by="2130" sby="0" ng="1" na="1">
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+
 </testResults>
